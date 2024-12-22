@@ -1,0 +1,127 @@
+Network Multi-Tool - Project Description for AI Collaboration
+
+Overview:
+
+The Network Multi-Tool is a Python-based software designed to provide a set of essential networking utilities for network analysis, troubleshooting, and connectivity testing. This tool is organized into modular components, making it easy for collaborators or other AI systems to extend or enhance the functionality.
+
+Project Goals:
+
+Network Scanning: Detect devices and open ports on a network.
+
+Packet Sniffing: Capture and analyze network packets.
+
+WHOIS Lookup: Retrieve WHOIS information for a domain or IP.
+
+Traceroute: Analyze the path packets take to reach a destination.
+
+Ping Utility: Test connectivity and response times for a target.
+
+Current Structure:
+
+The project is divided into the following components:
+
+Core Functions (Folder: core/)
+
+scanner.py: Handles network scanning.
+
+packet_sniffer.py: Captures and logs network packets.
+
+whois_lookup.py: Executes WHOIS queries.
+
+traceroute.py: Performs traceroute analysis.
+
+ping_tool.py: Implements ping functionality.
+
+Utility Scripts (Folder: utils/)
+
+logger.py: Logs actions and errors.
+
+config.py: Stores configuration values.
+
+helper.py: Provides helper functions for shared tasks.
+
+**User Interface (Folder: ui/)
+
+cli.py: Command-line interface for interacting with the tool.
+
+gui.py: Placeholder for a graphical user interface (future enhancement).
+
+Testing Suite (Folder: tests/)
+
+test_scanner.py: Tests for the scanner.py module.
+
+test_traceroute.py: Tests for the traceroute.py module.
+
+test_utils.py: Tests for utility scripts.
+
+Root Files:
+
+main.py: Entry point for the application, providing a menu-driven interface for accessing features.
+
+requirements.txt: Lists the Python dependencies (e.g., scapy, requests, etc.).
+
+README.md: Project documentation.
+
+LICENSE: Licensing information (MIT License).
+
+Key Features:
+
+Modular Design: Each feature is isolated into its own module, enabling independent development and testing.
+
+Command-Line Interface: An interactive CLI allows users to access all features.
+
+Extensibility: The structure supports easy addition of new utilities and interfaces (e.g., GUI).
+
+Collaboration Notes:
+
+Development Guidelines:
+
+Follow Python coding standards (PEP 8).
+
+Use UTF-8 encoding for all files.
+
+Document functions and modules with docstrings.
+
+Future Enhancements:
+
+Expand the GUI with PyQt5.
+
+Integrate more advanced network analysis tools.
+
+Add support for multi-threading in resource-intensive tasks.
+
+Testing:
+
+Ensure all modules have comprehensive test cases in the tests/ folder.
+
+Use pytest for running automated tests.
+
+Example Workflow:
+
+User launches the tool by running main.py.
+
+A menu is displayed with the following options:
+
+1: Network Scanner
+
+2: Packet Sniffer
+
+3: WHOIS Lookup
+
+4: Traceroute
+
+5: Ping
+
+0: Exit
+
+The user selects an option, and the corresponding module from core/ is executed.
+
+Current Status:
+
+The basic project structure has been set up using install.py.
+
+Placeholder files exist for all core components, utilities, and tests.
+
+CLI functionality is implemented as a stub in ui/cli.py.
+
+This document serves as a roadmap for collaborators, providing the necessary context and directions for continuing development.
