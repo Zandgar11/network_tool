@@ -44,6 +44,17 @@
             color: #fff;
             margin-top: 2rem;
         }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .file-section {
+            margin-bottom: 2rem;
+        }
+        .file-section h3 {
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -51,66 +62,82 @@
         <h1>Network Multi-Tool Documentation</h1>
     </header>
     <nav>
-        <a href="#overview">Overview</a>
-        <a href="#installation">Installation</a>
-        <a href="#usage">Usage</a>
-        <a href="#modules">Modules</a>
-        <a href="#tests">Tests</a>
+        <a href="index.html">Home</a>
+        <a href="packet_sniffer.html">Packet Sniffer</a>
+        <a href="whois_lookup.html">WHOIS Lookup</a>
+        <a href="traceroute.html">Traceroute</a>
+        <a href="ping_tool.html">Ping Tool</a>
+        <a href="modules.html">Modules</a>
     </nav>
 
     <div class="container">
-        <section id="overview">
-            <h2>Overview</h2>
-            <p>The <strong>Network Multi-Tool</strong> is a Python-based project providing essential network utilities for scanning, testing, and troubleshooting network connections. It includes tools such as a network scanner, packet sniffer, WHOIS lookup, traceroute, and ping utility.</p>
+        <section>
+            <h2>Welcome to Network Multi-Tool</h2>
+            <p>The Network Multi-Tool is a Python project providing essential networking utilities for analyzing and troubleshooting networks.</p>
         </section>
 
-        <section id="installation">
-            <h2>Installation</h2>
-            <ol>
-                <li>Clone the repository:
-                    <pre><code>git clone https://github.com/yourusername/network-multi-tool.git</code></pre>
-                </li>
-                <li>Navigate to the project directory:
-                    <pre><code>cd network-multi-tool</code></pre>
-                </li>
-                <li>Install the required dependencies:
-                    <pre><code>pip install -r requirements.txt</code></pre>
-                </li>
-            </ol>
-        </section>
-
-        <section id="usage">
-            <h2>Usage</h2>
-            <p>Run the main script to start the tool:</p>
-            <pre><code>python main.py</code></pre>
-            <p>Choose a feature from the interactive menu:</p>
+        <section class="file-section" id="packet-sniffer">
+            <h3>Packet Sniffer</h3>
+            <p><strong>File:</strong> <code>core/packet_sniffer.py</code></p>
+            <p>This module captures and displays network packets in real time. It uses libraries like <code>scapy</code> to provide detailed information about each packet.</p>
             <ul>
-                <li>Network Scanner</li>
-                <li>Packet Sniffer</li>
-                <li>WHOIS Lookup</li>
-                <li>Traceroute</li>
-                <li>Ping</li>
+                <li><strong>Functions:</strong>
+                    <ul>
+                        <li><code>start_sniffing():</code> Initiates the packet capturing process.</li>
+                        <li><code>parse_packet(packet):</code> Analyzes the content of a captured packet.</li>
+                    </ul>
+                </li>
+                <li><strong>Example:</strong>
+                    <pre><code>python main.py --sniffer</code></pre>
+                </li>
             </ul>
         </section>
 
-        <section id="modules">
-            <h2>Modules</h2>
-            <p>The project is organized into the following modules:</p>
+        <section class="file-section" id="whois-lookup">
+            <h3>WHOIS Lookup</h3>
+            <p><strong>File:</strong> <code>core/whois_lookup.py</code></p>
+            <p>This module queries WHOIS information for a given domain or IP address. It retrieves details about ownership and registration.</p>
             <ul>
-                <li><strong>core/</strong>: Contains the main functionality, including network scanning, traceroute, and more.</li>
-                <li><strong>utils/</strong>: Helper scripts for logging, configuration, and common tasks.</li>
-                <li><strong>ui/</strong>: Handles user interfaces, including CLI and future GUI enhancements.</li>
+                <li><strong>Functions:</strong>
+                    <ul>
+                        <li><code>perform_whois_query(target):</code> Executes a WHOIS query for the specified target.</li>
+                    </ul>
+                </li>
+                <li><strong>Example:</strong>
+                    <pre><code>python main.py --whois example.com</code></pre>
+                </li>
             </ul>
         </section>
 
-        <section id="tests">
-            <h2>Tests</h2>
-            <p>To run the tests, use:</p>
-            <pre><code>python -m unittest discover tests</code></pre>
-            <p>The test suite includes:</p>
+        <section class="file-section" id="traceroute">
+            <h3>Traceroute</h3>
+            <p><strong>File:</strong> <code>core/traceroute.py</code></p>
+            <p>This module traces the path packets take to reach a target. It identifies intermediate hops and their response times.</p>
             <ul>
-                <li>Tests for core functionality (e.g., scanner, traceroute).</li>
-                <li>Validation of utility functions (e.g., hostname resolution, IP validation).</li>
+                <li><strong>Functions:</strong>
+                    <ul>
+                        <li><code>perform_traceroute(target):</code> Executes a traceroute for the specified target.</li>
+                    </ul>
+                </li>
+                <li><strong>Example:</strong>
+                    <pre><code>python main.py --traceroute example.com</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section class="file-section" id="ping-tool">
+            <h3>Ping Tool</h3>
+            <p><strong>File:</strong> <code>core/ping_tool.py</code></p>
+            <p>This module sends ICMP echo requests to test connectivity and measure response times.</p>
+            <ul>
+                <li><strong>Functions:</strong>
+                    <ul>
+                        <li><code>ping(target, count=4):</code> Sends a specified number of ping requests to the target.</li>
+                    </ul>
+                </li>
+                <li><strong>Example:</strong>
+                    <pre><code>python main.py --ping example.com</code></pre>
+                </li>
             </ul>
         </section>
     </div>
