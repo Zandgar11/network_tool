@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Multi-Tool Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Network Multi-Tool Documentation</h1>
+    </header>
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#installation">Installation</a>
+        <a href="#usage">Usage</a>
+        <a href="#modules">Modules</a>
+        <a href="#tests">Tests</a>
+    </nav>
+
+    <div class="container">
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The <strong>Network Multi-Tool</strong> is a Python-based project providing essential network utilities for scanning, testing, and troubleshooting network connections. It includes tools such as a network scanner, packet sniffer, WHOIS lookup, traceroute, and ping utility.</p>
+        </section>
+
+        <section id="installation">
+            <h2>Installation</h2>
+            <ol>
+                <li>Clone the repository:
+                    <pre><code>git clone https://github.com/yourusername/network-multi-tool.git</code></pre>
+                </li>
+                <li>Navigate to the project directory:
+                    <pre><code>cd network-multi-tool</code></pre>
+                </li>
+                <li>Install the required dependencies:
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>Run the main script to start the tool:</p>
+            <pre><code>python main.py</code></pre>
+            <p>Choose a feature from the interactive menu:</p>
+            <ul>
+                <li>Network Scanner</li>
+                <li>Packet Sniffer</li>
+                <li>WHOIS Lookup</li>
+                <li>Traceroute</li>
+                <li>Ping</li>
+            </ul>
+        </section>
+
+        <section id="modules">
+            <h2>Modules</h2>
+            <p>The project is organized into the following modules:</p>
+            <ul>
+                <li><strong>core/</strong>: Contains the main functionality, including network scanning, traceroute, and more.</li>
+                <li><strong>utils/</strong>: Helper scripts for logging, configuration, and common tasks.</li>
+                <li><strong>ui/</strong>: Handles user interfaces, including CLI and future GUI enhancements.</li>
+            </ul>
+        </section>
+
+        <section id="tests">
+            <h2>Tests</h2>
+            <p>To run the tests, use:</p>
+            <pre><code>python -m unittest discover tests</code></pre>
+            <p>The test suite includes:</p>
+            <ul>
+                <li>Tests for core functionality (e.g., scanner, traceroute).</li>
+                <li>Validation of utility functions (e.g., hostname resolution, IP validation).</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Network Multi-Tool Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>
