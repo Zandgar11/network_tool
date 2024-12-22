@@ -29,7 +29,7 @@ def create_project_structure():
             create_file(os.path.join(folder, file))
 
     for file, content in base_files.items():
-        create_file(file, content)
+        create_file(file, content)  
 
     print("Structure du projet créée avec succès !")
 
