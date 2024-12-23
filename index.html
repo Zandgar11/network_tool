@@ -9,58 +9,75 @@
 <body>
     <header>
         <h1>Network Multi-Tool Documentation</h1>
+        <p>Un outil tout-en-un pour l'analyse et le diagnostic réseau.</p>
     </header>
     <nav>
         <ul>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#modules">Modules</a></li>
             <li><a href="#utilisation">Utilisation</a></li>
+            <li><a href="#installation">Installation</a></li>
             <li><a href="#contribution">Contribuer</a></li>
         </ul>
     </nav>
     <main>
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>Le <strong>Network Multi-Tool</strong> est un ensemble d'outils réseau conçu pour aider à analyser, diagnostiquer et tester des connexions réseau. Ce projet est entièrement modulaire et extensible.</p>
+            <p>Le <strong>Network Multi-Tool</strong> est un ensemble d'outils modulaires pour les développeurs, ingénieurs et passionnés de réseaux. Il permet de réaliser plusieurs opérations comme le scan de réseau, le sniffing de paquets, les requêtes WHOIS, le traceroute, et bien plus.</p>
         </section>
         <section id="modules">
             <h2>Modules</h2>
             <article>
                 <h3>Scanner réseau</h3>
-                <p>Utilisé pour scanner une plage d'adresses IP et identifier les hôtes actifs.</p>
+                <p>Ce module scanne une plage d'adresses IP pour identifier les hôtes actifs.</p>
+                <pre><code>Exemple : IP de départ : 192.168.1.1, IP de fin : 192.168.1.254</code></pre>
             </article>
             <article>
                 <h3>Sniffer de paquets</h3>
-                <p>Capture et affiche les paquets réseau en temps réel.</p>
+                <p>Capture et affiche les paquets réseau en temps réel. Idéal pour le débogage ou l'analyse de trafic réseau.</p>
+                <pre><code>Exemple : Lancez simplement ce module et surveillez les paquets.</code></pre>
             </article>
             <article>
                 <h3>Requête WHOIS</h3>
-                <p>Effectue une recherche WHOIS pour un domaine ou une adresse IP publique.</p>
+                <p>Effectue une recherche WHOIS pour un domaine ou une adresse IP. Ce module est utile pour vérifier l'enregistrement des domaines.</p>
+                <pre><code>Exemple : Entrez "example.com" pour obtenir des détails.</code></pre>
             </article>
             <article>
                 <h3>Traceroute</h3>
-                <p>Montre le chemin emprunté par les paquets pour atteindre une destination cible.</p>
+                <p>Affiche le chemin emprunté par les paquets pour atteindre une destination cible. Pratique pour identifier les goulots d'étranglement.</p>
+                <pre><code>Exemple : traceroute 8.8.8.8</code></pre>
             </article>
             <article>
                 <h3>Ping</h3>
-                <p>Envoie des requêtes ICMP pour tester la connectivité avec une cible.</p>
+                <p>Envoie des requêtes ICMP pour tester la connectivité avec une cible et mesurer le délai.</p>
+                <pre><code>Exemple : ping 8.8.8.8</code></pre>
             </article>
         </section>
         <section id="utilisation">
             <h2>Utilisation</h2>
             <ol>
-                <li>Téléchargez et installez le projet.</li>
-                <li>Lancez <code>main.py</code> et suivez les instructions du menu.</li>
-                <li>Choisissez une option pour accéder à l'outil souhaité.</li>
+                <li>Lancez <code>main.py</code> en exécutant : <code>python main.py</code>.</li>
+                <li>Suivez le menu pour choisir un module.</li>
+                <li>Entrez les paramètres demandés pour chaque module.</li>
             </ol>
+        </section>
+        <section id="installation">
+            <h2>Installation</h2>
+            <p>Exécutez le fichier <code>install.py</code> pour créer la structure des dossiers et installer les dépendances.</p>
+            <pre><code>python install.py</code></pre>
         </section>
         <section id="contribution">
             <h2>Contribuer</h2>
-            <p>Les contributions sont les bienvenues ! Veuillez soumettre des demandes de tirage sur le dépôt GitHub.</p>
+            <p>Nous acceptons les contributions via GitHub. Suivez les étapes :</p>
+            <ol>
+                <li>Forkez le dépôt.</li>
+                <li>Créez une branche pour vos modifications.</li>
+                <li>Soumettez une pull request avec une description détaillée.</li>
+            </ol>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Network Multi-Tool. Tous droits réservés.</p>
+        <p>&copy; 2024 Network Multi-Tool. Créé par Zandgar11.</p>
     </footer>
 </body>
 </html>
