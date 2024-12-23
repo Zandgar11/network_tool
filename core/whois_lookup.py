@@ -1,19 +1,29 @@
-import socket
+import subprocess
+import ipaddress
 
 def whois_lookup(target):
-    """Performs a WHOIS lookup for the given target."""
-    print(f"Performing WHOIS lookup for: {target}")
+    """
+    Effectue une recherche WHOIS pour le domaine ou l'adresse IP spécifié.
+    """
     try:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.settimeout(5)
-            sock.connect(("whois.verisign-grs.com", 43))
-            sock.sendall((target + "\r\n").encode("utf-8"))
-            response = b""
-            while True:
-                data = sock.recv(4096)
-                if not data:
-                    break
-                response += data
-            print(response.decode("utf-8"))
+        # Vérifiez si l'adresse est locale
+        try:
+            ip = ipaddress.ip_address(target)
+            if ip.is_private:
+                print("[ERREUR] Les adresses IP privées ne peuvent pas être recherchées dans les bases WHOIS.")
+                return
+        except ValueError:
+            pass  # Ce n'est pas une adresse IP, continuez avec un domaine
+
+        # Exécutez la commande WHOIS
+        print(f"[INFO] Recherche WHOIS pour : {target}")
+        result = subprocess.run(["whois", target], capture_output=True, text=True)
+
+        # Vérifiez si le résultat est vide ou contient une erreur
+        if "No match for" in result.stdout or result.returncode != 0:
+            print("[ERREUR] Aucune correspondance trouvée ou domaine non valide.")
+        else:
+            print(result.stdout)
+
     except Exception as e:
-        print(f"Error during WHOIS lookup: {e}")
+        print(f"[ERREUR] Une erreur est survenue lors de la recherche WHOIS : {e}")

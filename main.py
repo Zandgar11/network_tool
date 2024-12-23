@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-from ui.cli import start_cli
+import os
+import sys
 
 def main():
     print("=== Network Multi-Tool ===")
@@ -10,28 +10,45 @@ def main():
     print("5. Ping")
     print("0. Quitter")
 
-    choice = input("Choisissez une option : ")
+    while True:
+        try:
+            choice = int(input("Choisissez une option : "))
+            
+            if choice == 1:
+                from core.packet_sniffer import sniff_packets
+                target = input("Entrez l'adresse IP ou la plage (ex: 192.168.1.0/24) : ")
+                sniff_packets(target)
 
-    if choice == "1":
-        from core.scanner import network_scan
-        network_scan()
-    elif choice == "2":
-        from core.packet_sniffer import sniff_packets
-        sniff_packets()
-    elif choice == "3":
-        from core.whois_lookup import whois_lookup
-        whois_lookup()
-    elif choice == "4":
-        from core.traceroute import traceroute
-        traceroute()
-    elif choice == "5":
-        from core.ping_tool import ping
-        ping()
-    elif choice == "0":
-        print("Au revoir !")
-    else:
-        print("Choix invalide.")
-        main()
+            elif choice == 2:
+                from core.packet_sniffer import sniff_packets
+                sniff_packets()
+
+            elif choice == 3:
+                from core.whois_lookup import whois_lookup
+                target = input("Entrez le domaine ou l'adresse IP pour la recherche WHOIS : ")
+                whois_lookup(target)
+
+            elif choice == 4:
+                from core.traceroute import traceroute
+                target = input("Entrez l'adresse IP ou le domaine à tracer : ")
+                traceroute(target)
+
+            elif choice == 5:
+                from core.ping_tool import ping
+                target = input("Entrez l'adresse IP ou le domaine à pinger : ")
+                ping(target)
+
+            elif choice == 0:
+                print("Au revoir !")
+                sys.exit(0)
+
+            else:
+                print("Option invalide. Veuillez réessayer.")
+
+        except ValueError:
+            print("Entrée invalide. Veuillez entrer un nombre.")
+        except Exception as e:
+            print(f"Une erreur s'est produite : {e}")
 
 if __name__ == "__main__":
     main()
