@@ -1,10 +1,13 @@
-from scapy.all import sniff
+rom scapy.all import sniff
 
-def packet_sniffer(interface):
-    """Sniffs network packets on the specified interface."""
-    print(f"Starting packet sniffing on interface: {interface}")
+def sniff_packets():
+    """
+    Fonction principale pour capturer des paquets réseau.
+    """
+    print("[INFO] Démarrage de la capture de paquets...")
 
     def process_packet(packet):
-        print(packet.summary())
+        print(f"[PACKET] {packet.summary()}")
 
-    sniff(iface=interface, prn=process_packet, store=False)
+    # Capture les paquets (par défaut, l'interface est auto-sélectionnée)
+    sniff(prn=process_packet, store=False)
