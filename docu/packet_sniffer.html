@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packet Sniffer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #24292f;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #2f363d;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #61dafb;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #24292f;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        code {
+            background: #eef;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        h1, h2, h3 {
+            color: #24292f;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Packet Sniffer</h1>
+    </header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="packet_sniffer.html">Packet Sniffer</a>
+        <a href="whois_lookup.html">WHOIS Lookup</a>
+        <a href="traceroute.html">Traceroute</a>
+        <a href="ping_tool.html">Ping Tool</a>
+        <a href="modules.html">Modules</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>À propos du Packet Sniffer</h2>
+            <p>Le module <strong>Packet Sniffer</strong> est conçu pour capturer les paquets réseau en temps réel. Il peut être utilisé pour analyser le trafic réseau, détecter des anomalies ou surveiller l'activité sur un réseau donné.</p>
+        </section>
+
+        <section>
+            <h3>Fonctionnalités</h3>
+            <ul>
+                <li>Capture de paquets en direct.</li>
+                <li>Filtrage des paquets par protocole (TCP, UDP, ICMP, etc.).</li>
+                <li>Affichage des informations détaillées sur chaque paquet (source, destination, ports, etc.).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Comment l'utiliser ?</h3>
+            <p>Pour lancer le Packet Sniffer, utilisez la commande suivante :</p>
+            <pre><code>python main.py --sniffer</code></pre>
+            <p>Vous pouvez spécifier des options supplémentaires pour filtrer les résultats :</p>
+            <pre><code>python main.py --sniffer --filter tcp</code></pre>
+        </section>
+
+        <section>
+            <h3>Exemple de sortie</h3>
+            <pre><code>
+[INFO] Sniffing started on interface eth0...
+[PACKET] Source: 192.168.1.10, Destination: 8.8.8.8, Protocol: ICMP
+[PACKET] Source: 192.168.1.11, Destination: 192.168.1.1, Protocol: TCP, Port: 443
+            </code></pre>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Network Multi-Tool Project. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
