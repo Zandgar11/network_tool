@@ -3,128 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation du Network Multi-Tool</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        header {
-            background: #24292f;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            background: #2f363d;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #61dafb;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #24292f;
-            color: #fff;
-            margin-top: 2rem;
-        }
-        code {
-            background: #eef;
-            padding: 0.3rem 0.5rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-        }
-        h1, h2, h3 {
-            color: #24292f;
-        }
-        ul {
-            padding-left: 1.5rem;
-        }
-    </style>
+    <title>Network Multi-Tool Documentation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Documentation du Network Multi-Tool</h1>
+        <h1>Network Multi-Tool Documentation</h1>
     </header>
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="docu/packet_sniffer.html">Packet Sniffer</a>
-        <a href="docu/whois_lookup.html">WHOIS Lookup</a>
-        <a href="docu/traceroute.html">Traceroute</a>
-        <a href="docu/ping_tool.html">Ping Tool</a>
-        <a href="docu/modules.html">Modules</a>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#utilisation">Utilisation</a></li>
+            <li><a href="#contribution">Contribuer</a></li>
+        </ul>
     </nav>
-
-    <div class="container">
-        <section>
-            <h2>Bienvenue dans la documentation du Network Multi-Tool</h2>
-            <p>Ce projet Python rassemble plusieurs outils réseau essentiels pour analyser, diagnostiquer et résoudre des problèmes de connectivité. Que vous soyez un administrateur système ou un passionné de réseaux, ce logiciel est conçu pour vous.</p>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Le <strong>Network Multi-Tool</strong> est un ensemble d'outils réseau conçu pour aider à analyser, diagnostiquer et tester des connexions réseau. Ce projet est entièrement modulaire et extensible.</p>
         </section>
-
-        <section>
-            <h3>Objectifs principaux</h3>
-            <ul>
-                <li>Analyse de paquets réseau en temps réel avec <strong>Packet Sniffer</strong>.</li>
-                <li>Consultation des informations WHOIS sur des domaines ou adresses IP.</li>
-                <li>Suivi des chemins empruntés par des paquets avec <strong>Traceroute</strong>.</li>
-                <li>Test de la connectivité avec des requêtes ICMP via l'outil <strong>Ping</strong>.</li>
-                <li>Organisation modulaire pour une extensibilité facile.</li>
-            </ul>
+        <section id="modules">
+            <h2>Modules</h2>
+            <article>
+                <h3>Scanner réseau</h3>
+                <p>Utilisé pour scanner une plage d'adresses IP et identifier les hôtes actifs.</p>
+            </article>
+            <article>
+                <h3>Sniffer de paquets</h3>
+                <p>Capture et affiche les paquets réseau en temps réel.</p>
+            </article>
+            <article>
+                <h3>Requête WHOIS</h3>
+                <p>Effectue une recherche WHOIS pour un domaine ou une adresse IP publique.</p>
+            </article>
+            <article>
+                <h3>Traceroute</h3>
+                <p>Montre le chemin emprunté par les paquets pour atteindre une destination cible.</p>
+            </article>
+            <article>
+                <h3>Ping</h3>
+                <p>Envoie des requêtes ICMP pour tester la connectivité avec une cible.</p>
+            </article>
         </section>
-
-        <section>
-            <h3>Structure du projet</h3>
-            <p>Voici un aperçu des principaux fichiers et leur rôle :</p>
-            <ul>
-                <li><code>core/</code> : Contient les modules essentiels (sniffer, ping, traceroute, etc.).</li>
-                <li><code>ui/</code> : Fournit une interface CLI pour interagir avec les modules.</li>
-                <li><code>utils/</code> : Inclut des fonctions auxiliaires pour le formatage et la gestion des données.</li>
-                <li><code>main.py</code> : Point d'entrée principal du projet.</li>
-            </ul>
+        <section id="utilisation">
+            <h2>Utilisation</h2>
+            <ol>
+                <li>Téléchargez et installez le projet.</li>
+                <li>Lancez <code>main.py</code> et suivez les instructions du menu.</li>
+                <li>Choisissez une option pour accéder à l'outil souhaité.</li>
+            </ol>
         </section>
-
-        <section>
-            <h3>Comment commencer ?</h3>
-            <p>Pour exécuter le projet, installez les dépendances nécessaires et lancez l'application :</p>
-            <pre><code>python main.py</code></pre>
-            <p>Utilisez les options de ligne de commande pour accéder aux différents modules :</p>
-            <ul>
-                <li><code>--sniffer</code> : Lance le Packet Sniffer.</li>
-                <li><code>--whois &lt;domaine&gt;</code> : Effectue une recherche WHOIS.</li>
-                <li><code>--traceroute &lt;cible&gt;</code> : Effectue un traceroute vers une cible.</li>
-                <li><code>--ping &lt;cible&gt;</code> : Effectue un ping vers une cible.</li>
-            </ul>
+        <section id="contribution">
+            <h2>Contribuer</h2>
+            <p>Les contributions sont les bienvenues ! Veuillez soumettre des demandes de tirage sur le dépôt GitHub.</p>
         </section>
-    </div>
-
+    </main>
     <footer>
-        <p>&copy; 2024 Network Multi-Tool Project. Tous droits réservés.</p>
+        <p>&copy; 2024 Network Multi-Tool. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
