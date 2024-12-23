@@ -19,11 +19,11 @@ def main():
         from core.packet_sniffer import sniff_packets
         sniff_packets()
     elif choice == "3":
-        from core.whois_lookup import whois_query
-        whois_query()
+        from core.whois_lookup import whois_lookup
+        whois_lookup()
     elif choice == "4":
-        from core.traceroute import perform_traceroute
-        perform_traceroute()
+        from core.traceroute import traceroute
+        traceroute()
     elif choice == "5":
         from core.ping_tool import ping
         ping()
