@@ -1,4 +1,4 @@
-rom scapy.all import sniff
+from scapy.all import sniff
 
 def sniff_packets():
     """
