@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules - Network Multi-Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .module {
+            margin-bottom: 2rem;
+        }
+        .module h3 {
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modules du Network Multi-Tool</h1>
+    </header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="core.html">Core Modules</a>
+        <a href="ui.html">Interface utilisateur</a>
+        <a href="utils.html">Utilitaires</a>
+    </nav>
+    <div class="container">
+        <h2>Liste des Modules</h2>
+        <div class="module">
+            <h3>main.py</h3>
+            <p>Le fichier principal qui initialise le programme et lance l'interface CLI. Il contient la fonction <code>main</code>, qui orchestre l'exécution globale du projet.</p>
+        </div>
+        <div class="module">
+            <h3>core/packet_sniffer.py</h3>
+            <p>Module dédié à la capture des paquets réseau. Utilise la bibliothèque <code>scapy</code> pour analyser les paquets en temps réel. Fonction principale : <code>sniff_packets</code>.</p>
+        </div>
+        <div class="module">
+            <h3>ui/cli.py</h3>
+            <p>Interface en ligne de commande qui permet à l'utilisateur de naviguer dans les fonctionnalités du programme. Fournit un menu interactif pour sélectionner les options.</p>
+        </div>
+        <div class="module">
+            <h3>utils</h3>
+            <p>Contient des outils auxiliaires pour des fonctions réutilisables (par exemple, formattage de données, gestion des erreurs).</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Network Multi-Tool Project</p>
+    </footer>
+</body>
+</html>

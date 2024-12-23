@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traceroute Tool - Network Multi-Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Traceroute Tool</h1>
+    </header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="core.html">Core Modules</a>
+        <a href="ui.html">Interface utilisateur</a>
+        <a href="utils.html">Utilitaires</a>
+    </nav>
+    <div class="container">
+        <h2>Outil de Traceroute</h2>
+        <p>Le module Traceroute Tool permet de suivre le chemin des paquets à travers le réseau jusqu'à une destination donnée.</p>
+
+        <h3>Utilisation</h3>
+        <p>Pour utiliser l'outil de traceroute, exécutez le programme principal et sélectionnez l'option correspondante dans le menu CLI.</p>
+
+        <h3>Fonctionnalités</h3>
+        <ul>
+            <li>Affiche chaque saut (routeur) entre la source et la destination.</li>
+            <li>Inclut les temps de latence pour chaque saut.</li>
+            <li>Prend en charge les adresses IP et les noms de domaine comme cibles.</li>
+        </ul>
+
+        <h3>Exemple de Code</h3>
+        <pre><code class="language-python">import subprocess
+
+def traceroute(host):
+    """
+    Effectue un traceroute vers l'hôte spécifié.
+    """
+    try:
+        result = subprocess.run(["tracert", host], capture_output=True, text=True)
+        print(result.stdout)
+    except Exception as e:
+        print(f"Erreur lors de l'exécution de traceroute : {e}")</code></pre>
+
+        <h3>Remarque</h3>
+        <p>Le traceroute nécessite des privilèges spécifiques sur certains systèmes pour s'exécuter correctement.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Network Multi-Tool Project</p>
+    </footer>
+</body>
+</html>
